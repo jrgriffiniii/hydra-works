@@ -47,7 +47,7 @@ module Hydra::Works
         end
 
         def attach_attributes(file)
-          current_file.content = file
+          current_file.content = file.read
           current_file.original_name = DetermineOriginalName.call(file)
           current_file.mime_type = DetermineMimeType.call(file, current_file.original_name)
         end
